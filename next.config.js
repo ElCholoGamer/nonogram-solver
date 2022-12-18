@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+	assetPrefix: process.env.NODE_ENV === 'production' ? '/nonogram-solver/' : '',
+	reactStrictMode: true,
+	swcMinify: true,
+	images: {
+		unoptimized: true,
+	},
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
